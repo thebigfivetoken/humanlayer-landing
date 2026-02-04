@@ -1,64 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HumanLayer Clone</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HumanLayer – Real Humans for Web3 Tasks</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main CSS (ONLY ONE) -->
+  <link rel="stylesheet" href="galaxy.css">
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <div class="logo">HumanLayer</div>
-        <div class="nav-links">
-            <a href="#">Explore Humans</a>
-            <a href="#">Post a Task</a>
-            <a href="#">Docs</a>
-        </div>
-        <button class="btn-primary">Hire a Human</button>
-    </nav>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">🧠 HumanLayer</div>
+  <nav>
+    <a href="#">Explore Humans</a>
+    <a href="#">Post a Task</a>
+    <a href="#">Docs</a>
+    <button class="btn-primary" onclick="openModal()">Hire a Human</button>
+  </nav>
+</header>
 
-    <header class="hero">
-        <h1>Real Humans for <br><span>Web3 Tasks AI Can't Do</span></h1>
-        <p>Hire verified humans for DAO ops, research, moderation, <br>and on-chain review — protected by escrow.</p>
-        <div class="hero-btns">
-            <button class="btn-gradient">Explore Humans</button>
-            <button class="btn-outline">Become a Human</button>
-        </div>
-        <div class="badges">
-            <span>✓ Real Humans</span>
-            <span>✓ Web3 Native</span>
-            <span>✓ Escrow Protected</span>
-            <span>✓ No Bots</span>
-        </div>
-    </header>
+<!-- HERO -->
+<section class="hero">
+  <h1>
+    Real Humans for<br>
+    <span>Web3 Tasks AI Can’t Do</span>
+  </h1>
 
-    <section class="services">
-        <h2>What Humans Do Best</h2>
-        <div class="grid-container">
-            <div class="card purple-glow">
-                <div class="icon">🏛️</div>
-                <h3>DAO Operations</h3>
-                <p>Governance research & proposal review</p>
-            </div>
-            <div class="card purple-glow">
-                <div class="icon">🔍</div>
-                <h3>Research</h3>
-                <p>Token & protocol analysis</p>
-            </div>
-            <div class="card purple-glow">
-                <div class="icon">💬</div>
-                <h3>Moderation</h3>
-                <p>Discord & Telegram communities</p>
-            </div>
-            <div class="card cyan-glow">
-                <div class="icon">🔗</div>
-                <h3>On-Chain Review</h3>
-                <p>Manual verification & labeling</p>
-            </div>
-        </div>
-    </section>
+  <p>
+    Hire verified humans for DAO ops, research, moderation,
+    and on-chain review — protected by escrow.
+  </p>
+
+  <div class="hero-buttons">
+    <button class="btn-primary">Explore Humans</button>
+    <button class="btn-secondary">Become a Human</button>
+  </div>
+
+  <div class="badges">
+    ✔ Real Humans &nbsp; ✔ Web3 Native &nbsp; ✔ Escrow Protected &nbsp; ✔ No Bots
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section>
+  <h2>What Humans Do Best</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>🏛 DAO Operations</h3>
+      <p>Governance research & proposal review</p>
+    </div>
+
+    <div class="card">
+      <h3>🔍 Research</h3>
+      <p>Token & protocol analysis</p>
+    </div>
+
+    <div class="card">
+      <h3>🛡 Moderation</h3>
+      <p>Discord & Telegram communities</p>
+    </div>
+
+    <div class="card">
+      <h3>⛓ On-Chain Review</h3>
+      <p>Manual verification & labeling</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <h2>How It Works</h2>
+
+  <div class="steps">
+    <div class="step">
+      <h3>1. Browse Humans by Skill</h3>
+      <ul>
+        <li>Set your own rate</li>
+        <li>Choose tasks</li>
+        <li>Escrow-protected payouts</li>
+      </ul>
+      <button class="btn-secondary">Become a Human</button>
+    </div>
+
+    <div class="step">
+      <h3>2. Lock Payment in Escrow</h3>
+      <ul>
+        <li>Verified profiles</li>
+        <li>Transparent pricing</li>
+        <li>Manual dispute handling</li>
+      </ul>
+      <button class="btn-primary" onclick="openModal()">Hire a Human</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 HumanLayer. All rights reserved.
+</footer>
+
+<!-- MODAL -->
+<div id="hireModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h2>Hire a Human</h2>
+
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Task / Project" required>
+      <textarea placeholder="Describe your requirement"></textarea>
+      <button type="submit" class="btn-primary">Submit Request</button>
+    </form>
+  </div>
+</div>
+
+<!-- JS -->
+<script>
+  function openModal() {
+    document.getElementById("hireModal").style.display = "block";
+  }
+  function closeModal() {
+    document.getElementById("hireModal").style.display = "none";
+  }
+</script>
 
 </body>
 </html>
