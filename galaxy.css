@@ -18,6 +18,7 @@ html, body {
 
 /* NAVBAR */
 .navbar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,16 +28,56 @@ html, body {
 .logo {
   font-weight: 700;
   font-size: 20px;
-  display: flex;
-  flex-direction: column;
 }
 
-.owner-name {
-  font-size: 11px;
-  font-weight: 400;
-  color: #bda8ff;
-  margin-top: 4px;
-  letter-spacing: 0.5px;
+/* CENTER NAME GLOW */
+.name-glow-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 14px;
+}
+
+.name {
+  font-size: 13px;
+  font-weight: 400; /* NOT BOLD */
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  backdrop-filter: blur(8px);
+  border: 1px solid transparent;
+}
+
+/* INDIVIDUAL COLORS */
+.glow-purple {
+  color: #c9a6ff;
+  background: rgba(155,92,255,0.15);
+}
+
+.glow-pink {
+  color: #ff9ad5;
+  background: rgba(255,90,180,0.15);
+}
+
+.glow-blue {
+  color: #7fd7ff;
+  background: rgba(80,160,255,0.15);
+}
+
+.glow-green {
+  color: #6affc6;
+  background: rgba(80,255,180,0.15);
+}
+
+/* HOVER ANIMATION */
+.name:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow:
+    0 0 12px currentColor,
+    0 0 26px rgba(255,255,255,0.25);
+  border-color: currentColor;
 }
 
 /* NAV LINKS */
