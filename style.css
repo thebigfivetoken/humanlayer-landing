@@ -258,3 +258,22 @@ section h2 {
   margin-top: 100px;
 }
 
+/* ============================= */
+/* FORCE GALAXY BACKGROUND SHOW */
+/* ============================= */
+
+/* Body ka background transparent karo */
+body {
+  background: transparent !important;
+}
+
+/* Actual background html pe shift karo */
+html {
+  background:
+    radial-gradient(circle at 15% 30%, rgba(155,92,255,0.35), transparent 40%),
+    radial-gradient(circle at 85% 70%, rgba(106,255,198,0.25), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(90,30,150,0.35), transparent 55%),
+    #05000a;
+  min-height: 100%;
+}
+
