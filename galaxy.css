@@ -1,136 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HumanLayer – Real Humans for Web3 Tasks</title>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+/* GALAXY BACKGROUND */
+html, body {
+  min-height: 100%;
+  color: #fff;
+  background:
+    radial-gradient(circle at 15% 30%, #5b1fa6 0%, transparent 40%),
+    radial-gradient(circle at 85% 70%, #0f3d4c 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, #2b0f45 0%, transparent 55%),
+    #05000a;
+}
 
-  <!-- Main CSS (ONLY ONE) -->
-  <link rel="stylesheet" href="galaxy.css">
-</head>
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 64px;
+}
 
-<body>
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
 
-<!-- NAVBAR -->
-<header class="navbar">
-  <div class="logo">🧠 HumanLayer</div>
-  <nav>
-    <a href="#">Explore Humans</a>
-    <a href="#">Post a Task</a>
-    <a href="#">Docs</a>
-    <button class="btn-primary" onclick="openModal()">Hire a Human</button>
-  </nav>
-</header>
+.navbar a {
+  color: #cfc3ff;
+  text-decoration: none;
+  margin-right: 24px;
+  font-size: 14px;
+}
 
-<!-- HERO -->
-<section class="hero">
-  <h1>
-    Real Humans for<br>
-    <span>Web3 Tasks AI Can’t Do</span>
-  </h1>
+/* BUTTONS */
+.btn-primary {
+  background: linear-gradient(135deg, #b16cff, #7b4dff);
+  border: none;
+  padding: 12px 26px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(155,92,255,.6);
+}
 
-  <p>
-    Hire verified humans for DAO ops, research, moderation,
-    and on-chain review — protected by escrow.
-  </p>
+.btn-secondary {
+  background: transparent;
+  border: 1px solid #9b5cff;
+  padding: 12px 26px;
+  border-radius: 10px;
+  color: #fff;
+}
 
-  <div class="hero-buttons">
-    <button class="btn-primary">Explore Humans</button>
-    <button class="btn-secondary">Become a Human</button>
-  </div>
+/* HERO */
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 120px 20px 80px;
+}
 
-  <div class="badges">
-    ✔ Real Humans &nbsp; ✔ Web3 Native &nbsp; ✔ Escrow Protected &nbsp; ✔ No Bots
-  </div>
-</section>
+.hero h1 {
+  font-size: 48px;
+  line-height: 1.2;
+}
 
-<!-- FEATURES -->
-<section>
-  <h2>What Humans Do Best</h2>
+.hero span {
+  color: #b98cff;
+}
 
-  <div class="cards">
-    <div class="card">
-      <h3>🏛 DAO Operations</h3>
-      <p>Governance research & proposal review</p>
-    </div>
+.hero p {
+  margin-top: 16px;
+  color: #c8c1e8;
+}
 
-    <div class="card">
-      <h3>🔍 Research</h3>
-      <p>Token & protocol analysis</p>
-    </div>
+.hero-buttons {
+  margin-top: 32px;
+}
 
-    <div class="card">
-      <h3>🛡 Moderation</h3>
-      <p>Discord & Telegram communities</p>
-    </div>
+.hero-buttons button {
+  margin: 0 10px;
+}
 
-    <div class="card">
-      <h3>⛓ On-Chain Review</h3>
-      <p>Manual verification & labeling</p>
-    </div>
-  </div>
-</section>
+.badges {
+  margin-top: 20px;
+  color: #6affc6;
+}
 
-<!-- HOW IT WORKS -->
-<section>
-  <h2>How It Works</h2>
+/* SECTIONS */
+section h2 {
+  text-align: center;
+  margin: 80px 0 40px;
+}
 
-  <div class="steps">
-    <div class="step">
-      <h3>1. Browse Humans by Skill</h3>
-      <ul>
-        <li>Set your own rate</li>
-        <li>Choose tasks</li>
-        <li>Escrow-protected payouts</li>
-      </ul>
-      <button class="btn-secondary">Become a Human</button>
-    </div>
+/* CARDS */
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
 
-    <div class="step">
-      <h3>2. Lock Payment in Escrow</h3>
-      <ul>
-        <li>Verified profiles</li>
-        <li>Transparent pricing</li>
-        <li>Manual dispute handling</li>
-      </ul>
-      <button class="btn-primary" onclick="openModal()">Hire a Human</button>
-    </div>
-  </div>
-</section>
+.card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(155,92,255,.35);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(12px);
+}
 
-<!-- FOOTER -->
-<footer class="footer">
-  © 2026 HumanLayer. All rights reserved.
-</footer>
+/* HOW IT WORKS */
+.steps {
+  max-width: 1200px;
+  margin: 0 auto 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
 
-<!-- MODAL -->
-<div id="hireModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">×</span>
-    <h2>Hire a Human</h2>
+.step {
+  background: rgba(255,255,255,.05);
+  border-radius: 18px;
+  padding: 30px;
+}
 
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="text" placeholder="Task / Project" required>
-      <textarea placeholder="Describe your requirement"></textarea>
-      <button type="submit" class="btn-primary">Submit Request</button>
-    </form>
-  </div>
-</div>
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+}
 
-<!-- JS -->
-<script>
-  function openModal() {
-    document.getElementById("hireModal").style.display = "block";
-  }
-  function closeModal() {
-    document.getElementById("hireModal").style.display = "none";
-  }
-</script>
+.modal-content {
+  background: #140a28;
+  max-width: 420px;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 16px;
+}
 
-</body>
-</html>
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 40px;
+  color: #9a90c7;
+}
